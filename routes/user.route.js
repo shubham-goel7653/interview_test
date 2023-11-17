@@ -6,8 +6,8 @@ const authMiddleware = require('../middleware/auth.middleware')
 
 userRoute.post('/createUser',User.createUser)
 
-userRoute.post('/updateUserStatus',authMiddleware.verifyToken,User.updateUserStatus)
+userRoute.put('/updateUserStatus',authMiddleware.verifyToken,User.updateUserStatus)
 
-userRoute.post('/calculateDistance',authMiddleware.verifyToken,User.calculateDistance)
+userRoute.get('/calculateDistance',authMiddleware.verifyToken,User.calculateDistance)
 
 module.exports = userRoute
