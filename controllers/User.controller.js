@@ -80,6 +80,21 @@ exports.calculateDistance = async(req,res) => {
     }
 }
 
+exports.dayWiseUser = async(req,res) => {
+    try {
+        const {body} = req
+        const {week_number} = body
+
+        let user = await UserQueries.dayWiseUser(week_number)
+        console.log(user)
+        return utils.sendResponse(res,STATUS_CODE.OK,CONSTANT.Response.USER_FETCH,user)
+
+    }catch(error) {
+        console.log('error in dayWiseUser controller',error)
+        return utils.sendResponse(res,STATUS_CODE.INTERNAL_SERVER_ERROR,CONSTANT.SOMETHING_WENT_WRONG)
+    }
+}
+
 function calculateDistance(lat1, lon1, lat2, lon2) {
     const earthRadius = 6371; // Radius of the Earth in kilometers
 

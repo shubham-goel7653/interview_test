@@ -10,4 +10,7 @@ userRoute.put('/updateUserStatus',authMiddleware.verifyToken,User.updateUserStat
 
 userRoute.get('/calculateDistance',authMiddleware.verifyToken,User.calculateDistance)
 
+userRoute.get('/daywiseUser',User.dayWiseUser)
+
+
 module.exports = userRoute

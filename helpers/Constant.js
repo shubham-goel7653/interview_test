@@ -8,5 +8,7 @@ exports.USER_UPDATE_ERROR = 'You can not change email,mobile and loginId'
 exports.TODO_CREATED_SUCCESSFULL = 'user created successfully'
 
 exports.Response = {
-    USER_UPDATE : 'User updated Successfully'
+    USER_UPDATE : 'User updated Successfully',
+    USER_DISTANCE : 'distance fetched',
+    USER_FETCH : 'Fetch Successfully'
 }

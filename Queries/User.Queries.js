@@ -18,6 +18,19 @@ class UserQuries  {
         console.log(filter,'-=------',updateObj)
         return User.updateMany(filter,updateObj)
     }
+
+    async dayWiseUser(weeks) {
+        console.log(weeks)
+        return User.aggregate([
+            {
+              $match: {
+                $expr: {
+                  $eq: [{ $dayOfWeek : "$_generated_at"}, weeks]
+                }
+              }
+            }
+          ])
+    }
     
 
 }
